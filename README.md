@@ -7,7 +7,7 @@
 4. https://frontendmasters.com/hi/courses/crash-course?utm_source=pa&utm_medium=RT&utm_term=na&utm_content=facewall&utm_campaign=crash-course
 5. https://www.thinkful.com/open-sessions/workshops/build-your-first-blog-with-wordpress-1036/
 6. https://stormpath.com/blog/angular-node-15-minutes/?utm_source=node-weekly&utm_medium=newsletter&utm_campaign=angular-node-15-minutes
-7. 
+7. http://www.oreilly.com/web-platform/free/files/You_Dont_Know_JS_Up_and_Going.pdf
 
 
 ##NodeJs
