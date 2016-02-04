@@ -12,6 +12,11 @@
 
 ##NodeJs
 1. http://techbus.safaribooksonline.com/video/web-design-and-development/9780133929294
-
+2. https://davidbeath.com/posts/testing-http-responses-in-nodejs.html
+3. http://webapplog.com/tutorial-node-js-and-mongodb-json-rest-api-server-with-mongoskin-and-express-js/
+4. http://thejackalofjavascript.com/architecting-a-restful-node-js-app/
 
 ##AngularJS
+
+##Groovy
+1. https://www.youtube.com/watch?v=BXRDTiJfrSE
