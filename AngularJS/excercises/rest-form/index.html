@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.module.js"></script>
+    <script src="./app/product/product.module.js"></script>
+    <script src="./app/product/product.js"></script> <!-- orders to scripts matters at times -->
+  </head>
+  <body ng-app="myStoreApp">
+    <section ng-controller='StoreController as storeController'>
+      <ol>
+          <li ng-repeat='productItem in storeController.products'>
+              Name: {{productItem.name}}, cost: {{productItem.price}}
+          </li>
+      </ol>
+    </section>
+
+    <br/><hr/><br/>
+
+    <h2>Add a New Product</h2>
+    <section ng-controller='ProductController as product'>
+      <form name='productForm' novalidate> <!-- disable HTML5 validations-->
+        <div>
+          <label>Product Name: </label>
+          <input name='name' type='text' ng-model='product.name' required ng-minlength=3 ng-maxlength=10>
+          <p ng-show='productForm.name.$invalid'>Name is invalid</p>
+          <p ng-show='productForm.name.$invalid && productForm.name.$dirty'>
+            Name is invalid and dirty
+            The $error hash showns the errors: {{productForm.name.$error}}
+          </p>
+          <p ng-show='productForm.name.$error.required && productForm.name.$dirty'>
+            Name is a required field
+          </p>
+          <p ng-show='productForm.name.$error.minlength && productForm.name.$dirty'>
+            Input must be atleast 3 chars
+          </p>
+          <p ng-show='productForm.name.$error.maxlength && productForm.name.$dirty'>
+            Input must be no more than 10 chars
+          </p>
+        </div>
+
+        <div>
+          <label>Cost: </label>
+          <input name='cost' type='number' ng-model='product.cost'>
+          <p ng-show='productForm.cost.$error.number && productForm.cost.$dirty'>
+            Cost must be a number
+          </p>
+        </div>
+
+        <button ng-click='product.submit()' ng-disabled='productForm.$invalid'>Submit</button>
+      </form>
+    </section>
+  </body>
+</html>

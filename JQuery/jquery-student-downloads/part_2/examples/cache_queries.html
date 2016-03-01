@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	</head>
+	<body>
+		<div id="monday" class="weekday">
+			<p class="negative">*</p>
+			<p class="positive">****</p>
+			<p class="negative">**</p>
+		</div>
+		<div id="tuesday" class="weekday">
+			<p class="negative">*</p>
+			<p class="positive">***</p>
+			<p class="negative">*</p>
+			<p class="positive">*****</p>
+		</div>
+		<div id="wednesday" class="weekday">
+			<p class="positive">***</p>
+			<p class="negative">**</p>
+			<p class="positive">****</p>
+			<p class="negative">*</p>
+		</div>
+		<div id="thursday" class="weekday">
+			<p class="negative">**</p>
+			<p class="positive">****</p>
+			<p class="negative">**</p>
+			<p class="positive">***</p>
+			<p class="positive">*****</p>
+			<p class="positive">****</p>
+		</div>
+		<div id="friday" class="weekday">
+			<p class="negative">*</p>
+			<p class="positive">*****</p>
+			<p class="negative">**</p>
+		</div>
+		<div id="saturday" class="weekend">
+			<p class="negative">**</p>
+			<p class="positive">***</p>
+			<p class="positive">***</p>
+		</div>
+		<div id="sunday" class="weekend">
+			<p class="negative">**</p>
+			<p class="positive">***</p>
+			<p class="positive">***</p>
+			<p class="positive">*****</p>
+		</div>	
+		<div id="summary"></div>
+		<script>
+		$(document).ready(function() {
+			$weekend_positives = $(".weekend p.positive");
+			$weekend_negatives = $(".weekend p.negative");
+			$weekday_positives = $(".weekday p.positive");
+			$weekday_negatives = $(".weekday p.negative");
+			$all_positives = $weekday_positives.add($weekend_positives);
+			$all_negatives = $weekday_negatives.add($weekend_negatives);
+			
+			$summary = $("#summary");
+			$summary.append("<p>" + $all_positives.size() + " positive reviews</p>");
+            $summary.append("<p>" + $all_negatives.size() + " negative reviews</p>");
+		});
+		</script>
+	</body>
+</html>

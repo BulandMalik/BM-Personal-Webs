@@ -1,0 +1,75 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script src="http://underscorejs.org/underscore.js"></script>
+	<script type="text/template" id="animal-template">
+		<tr>
+			<td><%=type%></td>
+			<td><%=name%></td>
+			<td><%=birthday%></td>
+		</tr>
+	</script>
+
+	<script type="text/javascript" >
+	$(document).ready(function(){
+
+/*
+		$.getJSON("http://zoo-example.herokuapp.com/animals.json",function(animals){
+			alert("i am in");
+			$.each(animals, function(index, animal){
+				alert("ready");
+				var html = "<tr><td>" + animal.name + "</td></tr>";
+				$("#my").append(html);
+			})});	
+*/
+
+/*
+		$.getJSON("http://zoo-example.herokuapp.com/animals.json",function(animals){
+			
+			var compiled = _.template("<tr><td><%=type%></td><td><%=name%></td><td><%=birthday%></td></tr>");
+			var list = [];
+			$.each(animals, function(index, animal){
+			
+				var html = "<tr><td>" + animal.name + "</td></tr>";
+				list.push(html);
+			})
+			
+			$("#table tbody").append(list.join(''));
+		});	
+		
+*/
+		//alert("i am in");
+		$.getJSON("http://zoo-example.herokuapp.com/animals.json?jsoncallback=callme?",callMe());	
+		
+	});
+	
+	function callMe(animals)
+	{
+			
+			//var compiled = _.template("<tr><td><%=type%></td><td><%=name%></td><td><%=birthday%></td></tr>");
+			var animal_template = $("#animal-template").html();
+			var compiled = _.template(animal_template); //use by mvc js frameworks like spine
+			$.each(animals, function(index, animal){
+			
+				var output = compiled(animal);
+				$("table tbody").append(output);
+			})
+						
+	}
+	</script>
+
+</head>
+
+<h1>My Animals</h1>
+<table summary="" >
+<thead>
+	<tr>
+		<th>Type</th>
+		<th>Name</th>
+		<th>Birthday</th>	
+	</tr>
+</thead>
+<tbody id="my">
+</tbody>
+</table>
+</html>

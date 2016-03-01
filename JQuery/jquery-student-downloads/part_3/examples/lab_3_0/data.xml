@@ -1,0 +1,37 @@
+<div class="books">
+    <div class="book">
+	    <p>jQuery in Action</p>
+	    <img src="images/jqia.jpg" />
+        <p>
+            A really good web development framework anticipates your needs. jQuery does more-it practically reads your mind. Developers fall in love with this JavaScript library the moment they see 20 lines of code reduced to three. jQuery is concise and readable.
+
+			jQuery in Action, Second Edition is a fast-paced introduction and guide. It shows you how to traverse HTML documents, handle events, perform animations, and add Ajax to your web pages. The book's unique "lab pages" anchor the explanation of each new concept in a practical example. You'll learn how jQuery interacts with other tools and frameworks and how to build jQuery plugins.
+
+			This revised and expanded second edition includes even more lab pages than before, along with numerous examples that show the latest best practices developed by the jQuery community. It provides full coverage of jQuery 1.4, along with a deeper look at the ever-expanding world of jQuery plug-ins.
+        </p>
+    </div>
+
+    <div class="book">
+	    <p>jQuery UI 1.7</p>
+	    <img src="images/jui17.jpg" />
+        <p>
+			jQuery UI, a trusted suite of official plug-ins for the jQuery JavaScript library, gives you a solid platform on which to build rich and engaging interfaces with maximum compatibility and stability, and minimum time and effort.
+
+			jQuery UI has a series of ready-made, great-looking user interface widgets and a comprehensive set of core interaction helpers designed to be implemented in a consistent and developer-friendly way. With all this, the amount of code that you need to write personally to take a project from conception to completion is drastically reduced. 
+        </p>
+    </div>
+
+    <div class="book">
+	    <p>jQuery: Novice to Ninja</p>
+	    <img src="images/jn2j.jpg" />
+        <p>
+        <p>
+			jQuery: Novice to Ninja is a compilation of best-practice jQuery solutions to meet the most challenging JavaScript problems. In this question-and-answer book on jQuery, you'll find a cookbook of ready-to-go solutions to help breathe life into your web page. 
+
+			Topics covered include: - Scrolling, Resizing and Animating Webpage elements - Backgrounds, Slideshows, and Crossfaders - Menus, Tabs, and Panels - Buttons, Fields, and Controls - Lists, Trees, and Tables - Frames, Windows, and Dialogs - Adding interactivity with Ajax - Using the jQuery User Interface Themeroller - Writing your own jQuery plug-ins
+
+			All code used to create each solution is available for download and guaranteed to be simple, efficient and cross-browser compatible.            
+        </p>
+    </div>
+    
+</div>

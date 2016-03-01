@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.js"></script>
+    <!-- orders to scripts matters at times -->
+  </head>
+  <body ng-app="myStoreApp">
+    <section ng-controller='Product as product'>
+      <div>{{product.products[0]}}</div>
+      <div>{{product.products[1]}}</div>
+      <div>{{product.products[2]}}</div>
+      <div>{{product.products[3]}}</div>
+    </section>
+
+    <hr/>
+    <br/><br/>
+
+    <section ng-controller='Product as product'>
+      <ol>
+          <li ng-repeat='productItem in product.products'>
+            <p ng-if='$even'>
+              Even ==> Name: {{productItem.name}}, cost: {{productItem.price}}, category: {{productItem.category}}
+            </p>
+            <p ng-if='$odd'>
+              Odd ==> Name: {{productItem.name}}, cost: {{productItem.price}}, category: {{productItem.category}}
+            </p>
+          </li>
+      </ol>
+    </section>
+
+    <hr/>
+    <br/><br/>
+    <section ng-controller='Product as product'>
+      <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+        <tr ng-repeat='productItem in product.products'>
+          <td>{{productItem.name}}</td>
+          <td>{{productItem.price}}</td>
+          <td>{{productItem.category}}</td>
+        </tr>
+      </table>
+    </section>
+
+    <hr/>
+    <br/><br/>
+    <section ng-controller='HR as hr'>
+      <ol>
+          <li ng-repeat='employeeInfo in hr.employees'>
+            Index:{{$index}} ==>  Name: {{employeeInfo.name}}, Age: {{employeeInfo.age}}, Desig: {{employeeInfo.desig}}
+          </li>
+      </ol>
+    </section>
+
+  </body>
+</html>

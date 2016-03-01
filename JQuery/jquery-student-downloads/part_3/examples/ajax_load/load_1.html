@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<style>
+        div#loader {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            display: none;
+        }
+
+        div#loader.loading {
+            background: url(loading.gif) no-repeat center center;
+        }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+		<script>
+		$(document).ready(function(){
+			$('input:button.loader').click(function(){
+				var $loader = $('#loader');
+				$loader.show();
+				var $load_area = $('#load_area');
+				$load_area.fadeOut(2000, function() {
+					$(this).load('content.html', function() {
+						$loader.fadeOut(500);
+					});
+				})
+				$load_area.fadeIn(2000);
+			});
+		});
+		</script>
+	</head>
+	<body>
+        <h1>AJAX Load</h1>
+        <input class="loader" type="button" value="Load some content!" />
+        <div id="load_area">
+	    	<p>Click the button to load some content into this div</p>
+		</div>
+		<div id="loader" class="loading"></div>
+	</body>
+</html>

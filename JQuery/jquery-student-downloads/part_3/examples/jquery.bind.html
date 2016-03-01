@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<style type="text/css">
+		div#leave { width: 100px; border: 10px solid red; }
+		div#enter { width: 100px; border: 10px solid green; }
+		.entered { color: blue; }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+		<script>
+		$(document).ready(function(){
+			// bind click using the bind method
+			$('#button_1').bind('click', function() {
+				alert('You just clicked #1');
+			});
+			// bind click using the shortcut method
+			$('#button_2').click(function() {
+				alert('You just clicked #2');
+			});
+			// multiple events - different handlers
+			$('#button_3').bind({
+				mouseenter: function() {
+			    	$('#enter').css('opacity', '0.2');
+			    	$('#leave').css('opacity', '1.0');
+			  	},
+			  	mouseleave: function() {
+					$('#enter').css('opacity', '1.0');
+					$('#leave').css('opacity', '0.2');
+			  	}
+			});
+			// multiple events - same handler
+			$('#button_4').bind('mouseenter mouseleave', function() {
+				$(this).toggleClass('entered');
+			});
+			// reusable handler
+			function myHandler(event) { alert("You clicked '" + $(this).val() + "'"); }
+			$('#button_5').click( myHandler );
+			$('#button_6').click( myHandler );
+		});
+		</script>
+	</head>
+	<body>
+        <h1>Live Buttons</h1>
+        <input id="button_1" type="button" value="Button One" />
+        <input id="button_2" type="button" value="Button Two" />
+		<input id="button_3" type="button" value="Button Three" />
+		<input id="button_4" type="button" value="Button Four" />
+		<input id="button_5" type="button" value="Button Five" />
+		<input id="button_6" type="button" value="Button Six" />
+		<br/><br/>
+		<div id="enter">
+			Enter
+		</div>	
+		<div id="leave">
+			Leave
+		</div>
+	</body>
+</html>

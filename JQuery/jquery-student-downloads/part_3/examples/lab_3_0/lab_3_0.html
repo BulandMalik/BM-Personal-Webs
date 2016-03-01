@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<style>
+        div#loader {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            display: none;
+        }
+
+        div#loader.loading {
+            background: url(images/loading.gif) no-repeat center center;
+        }
+
+	    div.book img {
+		    width: 300px;
+            height: 400px;
+	    }
+	
+		.img_block {
+		    display: block;
+		    clear: both;
+		}
+
+		.img_frame { background: #eee; border-style: solid; border-color: #ddd; }
+
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+		<script>
+		
+		$(document).ready(function(){
+			$('input:button.loader').click(function() {
+				
+			});
+		});
+		</script>
+	</head>
+	<body>
+        <h1>jQuery Book Suggestions</h1>
+		<input class="loader" type="button" value="Suggest a Book!" />
+        <div id="display_book">
+	        <div id="book_image"></div>
+	    	<p id="book_description">Book description goes here!</p>
+		</div>
+		<div id="loader" class="loading"></div>
+		<div id="temp_loading_area"></div>
+	</body>
+</html>

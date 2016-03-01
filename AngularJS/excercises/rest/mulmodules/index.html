@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.module.js"></script>
+    <script src="./app/product/product.module.js"></script>
+    <script src="./app/product/product.js"></script> <!-- orders to scripts matters at times -->
+  </head>
+  <body ng-app="myStoreApp">
+    <section ng-controller='Products as products'>
+      <ol>
+          <li ng-repeat='productItem in products.products'>
+              Name: {{productItem.name}}, cost: {{productItem.price}}, category: {{productItem.category}}
+          </li>
+      </ol>
+    </section>
+  </body>
+</html>

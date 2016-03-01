@@ -1,0 +1,5 @@
+INDEX VERSION 1.122+/Users/bmalik/work/Intuit/training/labs/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+688182003.index
+2895690332.index
+4087768395.index
+2808239961.index

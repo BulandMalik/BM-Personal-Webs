@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.js"></script>
+  </head>
+  <body ng-app="myapp1">
+    <section ng-controller='MyAppController as myAppController1'>
+        {{'hello ' + myAppController1.name}}
+    </section>
+    <section ng-controller='MyAppController as myAppController2'>
+          <section ng-controller='MyAppController as myAppController3'>
+              {{'hello ' + myAppController2.names}}
+              <br/>
+              {{'helloooo ' + myAppController3.names[1]}}
+              <br/>
+              {{'hello ' + myAppController1.name}} <!-- will not find name as that controller does not exists in this scope -->
+          </section>
+    </section>
+
+    <!-- Problem
+    <section ng-controller='MyAppController'>
+        <section ng-controller='MyAppController'>
+          {{'hello ' + names}}
+        </section>``
+    </section>
+    -->
+  </body>
+</html>

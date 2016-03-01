@@ -1,0 +1,14 @@
+Array.prototype.describe : funcion(func){
+	return this;	
+}
+	
+objects = [{}, {}, {}];
+for (index in objects) {
+	objects[index].describe = function() {
+		print('This object has an index of ' + index);
+	}
+}
+
+objects[0].describe();
+objects[1].describe();
+objects[2].describe();

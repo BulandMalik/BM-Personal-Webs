@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>
+			JQuery Hello World Plugin
+		</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+		<script>
+		// define the plugin
+		(function($){
+			$.fn.extend({ 
+				helloWorld: function() {
+			    	return this.each(function() {
+				     	$(this).html('<p style="display: none" class="hello">Hello World!</p>');
+				        $(".hello").fadeIn('slow');
+		    		});
+				}
+			});
+		})(jQuery);
+				
+		// use the plugin
+		$(document).ready(function(){
+			$(".doit").helloWorld();
+		});
+		</script>
+	</head>
+	<body>
+		<h2>Hello World of jQuery Plugins</h2>
+	   	<div id="target" class="doit"></div>
+	    <h3>Here's another one</h3>
+		<div class="doit"></div>
+	</body>
+</html>

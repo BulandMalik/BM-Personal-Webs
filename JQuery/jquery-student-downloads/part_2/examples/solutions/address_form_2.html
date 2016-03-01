@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title>
+			JQuery Form Validation
+		</title>
+		<style>
+		label {
+			display: block;
+		}
+		label.valid {
+			width: 24px;
+			background: url(valid.png) center center no-repeat;
+			display: inline-block;
+			text-indent: -9999px;
+		}
+		label.error {
+			padding-left: 5px;
+			display: inline-block;
+		}
+		input {
+			display: inline-block;
+		}
+		form div {
+			padding: 5px;
+			float: left;
+			clear: left;
+			width: 100%;
+		}
+		button {
+			margin-top: 10px;
+		}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+		<script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js" type="text/javascript"></script>
+		<script>
+		// validation plugin
+		$(document).ready(function(){
+		  $('#address_form').validate({
+		    rules: {
+		      street: {
+		        required: true,
+		      },
+		      city: {
+		        required: true,
+		      },
+		      state: {
+		        required: true,
+		      },
+		      zipcode: {
+		        required: true,
+		      }
+		    },
+		    success: function(label) {
+		      label.text('OK!').addClass('valid');
+		    }
+		  });
+		});
+		</script>
+	</head>
+	<body>
+		<h2>
+			Address Information
+		</h2>
+		<form action="" id="address_form">
+			<div>
+				<label for="street">Street</label> 
+				<input name="street" id="street" type="text">
+			</div>
+			<div>
+				<label for="city">City</label> 
+				<input name="city" id="city" type="text">
+			</div>
+			<div>
+				<label for="state">State</label>
+				<select id="state" name="state">
+					<option value="" selected>Please select...</option>
+					<option value="AL">Alabama</option>
+					<option value="AZ">Arizona</option>
+					<option value="CA">California</option>
+				</select>
+			</div>
+			<div>
+				<label for="zipcode">Zipcode</label> 
+				<input name="zipcode" id="zipcode" type="text">
+			</div>
+			<div>
+			    <input type="submit" value="Submit" />	
+			</div>
+		</form>
+	</body>
+</html>

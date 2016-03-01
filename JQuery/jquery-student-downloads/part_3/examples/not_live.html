@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+		<script>
+		function make_a_button() {
+			$('body').append('<input class="maker" type="button" value="Eric says, make me a button!" />');
+		}
+		$(document).ready(function(){
+            make_a_button();
+			$('input:button.maker').click(function(){
+			    make_a_button();
+			});
+		});
+		</script>
+	</head>
+	<body>
+        <h1>Live Buttons</h1>
+	</body>
+</html>

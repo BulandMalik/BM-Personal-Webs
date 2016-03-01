@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+		<script>
+		$(document).ready(function(){
+			$('#target').bind('custom', function(event, param1, param2) {
+			   $(this).text(param1 + " " + param2)
+			});
+			
+			$('#source').bind('click', function() {
+				$('#target').trigger('custom', ['Hello', 'World']);
+			});
+		});
+		</script>
+	</head>
+	<body>
+	    <h1>Custom Events</h1>
+	    <input id="source" type="button" value="Button One" />
+		<br/><br/>
+		<div id="target"></div>	
+	</body>
+</html>

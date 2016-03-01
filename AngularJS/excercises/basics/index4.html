@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.js"></script>
+  </head>
+  <body ng-app="myapp1">
+    <section ng-controller='MyAppController as myAppController1'>
+        <input ng-model='myAppController1.name'> <!-- two way binding -->
+        <input ng-model='myAppController1.age'> <!-- two way binding -->
+        {{'{name:' + myAppController1.name + ', age:' + myAppController1.age + '}'}} <!-- one way binding -->
+    </section>
+    <section ng-controller='MyAppController as myAppController2'>
+        <input ng-model='myAppController2.name'> <!-- two way binding -->
+        <input ng-model='myAppController2.age'> <!-- two way binding -->
+        {{'{name:' + myAppController2.name + ', age:' + myAppController2.age + '}'}} <!-- one way binding -->
+    </section>
+
+  </body>
+</html>

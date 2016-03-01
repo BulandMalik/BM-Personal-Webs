@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.js"></script>
+  </head>
+  <body ng-app="myapp1">
+      <div ng-init='name="Buland"'></div>
+      <div ng-init='names=["Buland","Qasim"]'></div>
+      {{'Hello ' + name + '. Enjoy your day!'}}
+      <p ng-bind='names'></p>
+      <p ng-bind-template='Hello {{name}}'></p>
+      <p ng-bind-template='Hello {{names[1]}}'></p>
+  </body>
+</html>

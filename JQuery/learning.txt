@@ -1,0 +1,108 @@
+
+Learning
+---------
+better to use //CDATA with comments
+
+arguments object (arguments.calle() to call the same function as recursve fucntion)
+arguments object (arguments.length to see how many params been passed if function is not declared with paramas .. you can iterate with arguments[i]])
+
+Array.prototype.slice.call(arguments))
+
+
+"in" is a keyword used with js objects - jquery live queries
+
+************ coffe script is a good tool to write and covert code into js
+
+Arrays can contain functions
+
+Arrays have good functions like map, each, filter, every, forEach.
+
+by using prototype you can extend an object like Array.prototype.each .. each as a new fucntion
+
+var double = function{} {retunr this * 2}; double.call(5);
+
+Closure And Curring - Function Chains
+
+Module & Prototype Patteren to create Library
+
+
+JQuery
+----------------------
+
+console.log - logs in the js console to debug more
+
+classes are selected with a dot like $(".classId")
+
+http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/
+
+css-tricks.com
+
+
+$("h1").click() OR $("h1").trigger("call"); .. invoking the onclick event on h1 so good to test it out in the js console window to see teh jquery/js behaviour
+
+use of id's intead of class is much efficient because of JQuery getElementById()
+
+design better mockup and if requires restructure it as well
+
+console.loh($.fn)
+
+$.fn.extend we use to create a jquery plugin
+
+$.extend also extends the params/options u are sendin to a plugin
+
+jquery on() / live() function to bind events to the elements thats created on the fly
+
+datatable.net
+
+XHR - XMLHttpRequest object
+
+http://pusher.com/docs
+
+twitter bootstrap project
+
+$.each (objList, function that will operate on the obj list)
+
+http://underscorejs.org/ ----- UNDERSCORE .. GOOD FOR TEMPLATES
+
+todomvc - http://addyosmani.github.com/todomvc/
+
+https://travis-ci.org/
+
+http://www.heroku.com/how - cloud deployment
+
+mustache template library
+
+http://foundation.zurb.com/
+
+http://jqueryui.com/themeroller/
+
+http://sass-lang.com/tutorial.html
+
+JASMINE - TDD & BDD (Behaviour Driven Development)
+
+http://cukes.info/
+
+phantomJS
+
+jsunit
+
+titanium & JQuery Mobile
+
+Google COmpiler / JSLint / JSHint / YUI Compressor / JSLitmus / JSFiddle
+
+PhoneGap - http://phonegap.com/
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+

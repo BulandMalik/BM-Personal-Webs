@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	</head>
+	<body>
+        <p class="a">A</p>
+        <p class="b">B</p>
+        <p class="c">C outside</p>
+        <p class="d">D</p>
+        <div id="inner">
+	        <p class="c">C inside</p>
+	        <p class="d">D</p>
+	        <p class="f">F</p>
+	        <p class="g">G</p>
+	    </div>
+        <p class="e">E</p>
+        <p class="f">F</p>
+        <p class="g">G</p>
+        <p class="h">H</p>
+        <p>Output 1</p>
+        <div id="output_1"></div>
+        <p>Output 2</p>
+        <div id="output_2"></div>
+		<script>
+		$(document).ready(function() {
+			$inner = $('#inner');
+			
+			$inner_c_1 = $('p.c', $inner).first().clone();
+			$inner_c_2 = $('#inner p.c').first().clone();
+			
+			$("#output_1").append($inner_c_1);
+			$("#output_2").append($inner_c_2);
+		});
+		</script>
+	</body>
+</html>

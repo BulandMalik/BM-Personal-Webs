@@ -1,0 +1,27 @@
+<!-- 
+In Lab 2.4 you are asked to created a custom jQuery plugin to:
+use jQuery to style an HTML table:
+- Zebra stripe the table (rows with alternating colors)
+- On hover on a row change the color
+- On click make the font on the row bold
+-->
+<html>
+	<head>
+		<title>
+			Lab 2.4 Zebra Stripping
+		</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+		<script src="lab_2_4.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<h2>Zebra Stripping</h2>
+
+
+		<script>				
+			// use the plugin
+			$(document).ready(function(){
+				$("#myTable").zebra();
+			});
+		</script>
+	</body>
+</html>

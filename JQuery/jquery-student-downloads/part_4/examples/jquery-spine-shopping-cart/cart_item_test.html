@@ -1,0 +1,40 @@
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/cupertino/jquery-ui.css" rel="stylesheet" />
+    <link type="text/css" href="styles/shopping_cart.css" rel="stylesheet" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.js"></script>
+    <script src="lib/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script> 
+
+    <script src="lib/spine.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/spine.model.local.js" type="text/javascript" charset="utf-8"></script>
+    
+    <!-- Pull in our Models and Controller -->
+    <script src="app/models/item.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app/controllers/cart_item.js" type="text/javascript" charset="utf-8"></script>
+        
+    <!-- jQuery Template for CartItem -->
+    <script type="text/x-jquery-tmpl" id="cartItem">
+        <li class="product ui-state-default" id="item_${pid}" price="${price}">
+            ${label()}
+            (<span id="qty">${quantity}</span>)
+            <a href="#" class="add">+</a>
+            <a href="#" class="remove">-</a>
+        </li>
+    </script>
+
+    <script>
+	jQuery(function($){
+		var item = Item.create({name: "Product 1", pid: "0001" , price: 100.0, quantity: 1});
+		var view = CartItem.init({item: item});
+		$("#item").html(view.render().el);
+	});
+    </script>
+</head>
+<body>
+	<h2>Cart Item Test</h2>
+    <div id="item"></div>
+</body>
+</html>

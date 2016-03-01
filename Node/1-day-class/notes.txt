@@ -1,0 +1,166 @@
+CLass Insstructor: Eric Greene
+---------------------------------------
+
+https://github.com/training4developers/node_12012015
+
+https://nodejs.org/en/
+
+---------------------------------------
+
+Client Side::: JavaScript is a glue language all written in C++. For security reaosn its a sandbox
+  DOM (C++)
+  Netwrok (C++)
+  FileSystem (C++)
+  SubSystems: like timers etc. (C++)
+
+Server Side:::
+  Node.js is also written in C++ providing API's to interact with the underlying server capabilities. As its running on server so not a sandbox
+    JavaScript is a glue language all written in C++
+      Processes (C++)
+      Netwrok (C++)
+      FileSystem (C++)
+      Databases (C++)
+
+************ You can write your own C++ modules and distribute using node package manager (NPM)
+
+------------------------------------------------------------------------------
+
+REPO environment
+  Read
+  Evaluate
+  Print
+  Operate
+
+you can do it by running 'node' command
+
+  var o = {id : 2}
+  o - print it
+  o.id -- print id
+  o["id"] - print id
+
+  o.address = {street:"main address", zip:"99901"}
+  o - print out .... { id: 2, address: { street: 'main address', zip: '99901' } }
+
+in javascipts, arrays are not arrays
+  var colors = []; --- undefined
+  > colors ------ []
+  > colors.push("red") -----1
+  > colors ----- [ 'red' ]
+  > colors.unshift("purple"); ----- 2
+  > colors ----- [ 'purple', 'red' ]
+  > colors.message = "Intuit Rocks!"
+  > colors ---- [ 'purple', 'red', message: 'Intuit Rocks!' ]
+
+in javascripts, fucnrions are objects
+  > function square(x) { return x * x; } ----- undefined
+  > square(4) ------ 16
+  > square.prop = "New Prop"; ----- 'New Prop'
+  > square ---- { [Function: square] prop: 'New Prop' }
+  > square(4,5); -------- 16
+    additional params goes into something called 'arguments'
+
+> 1/0 ------ Infinity
+> Infinity / Infinity ---- NaN
+
+******** Javascript was build/written with a mindset that it does not crash
+
+> .save repldemo.js ----- Session saved to:repldemo.js
+> .load repldemo.js
+
+------------------------------------------------------------------------------
+
+Javascript/Nodejs Desktop application
+  node webserver
+  Chromium (V8 (JavaScript engine))
+
+ECMAScript is a trademarked[1] scripting language specification standardized by Ecma
+International in ECMA-262 and ISO/IEC 16262. Well-known implementations of the language, such as
+JavaScript, JScript and ActionScript are widely used for client-side scripting on the Web.
+
+------------------------------------------------------------------------------
+npm init
+npm install commander-plus --save
+
+------------------------------------------------------------------------------
+
+In Javascript
+  truty & falsy
+
+****************** Promissings
+  https://www.promisejs.org/
+
+  Promises provide a clean separation of concerns between asynchronous behavior and the interface so asynchronous
+  functions can be called without callbacks, and callback interaction can be done on the generic promise interface.
+
+  gives us asynch try, catch, finally
+  undefined resulted in resolve().....
+    ********* if some function does not return anything than its return type in undefined which result into resolve()....
+
+************* Key Things to remember
+  put '{' next to statement not in next line
+    return ///// javascript put semicolon right here
+    {
+      id:2
+    };
+
+nested functions *************************
+  ***** functions are objects
+  ***** closures
+    ******* horrible so better to use prototype inheritence
+    primarily purpose of closure is to share parameters
+    its dependant on the lexical
+    you cannot create the functional outside the closures, it has to be inside the nextted fucntion
+
+-------------------------------------- HTTP
+
+npm installe express --save
+
+npm install body-parser --save
+
+************** MDN javascript documentation
+
+ sudo bpm install -g node-inspector
+
+ node-inspector
+  Node Inspector v0.12.3
+  Visit http://127.0.0.1:8080/?ws=127.0.0.1:8080&port=5858 to start debugging.
+
+node --debug-brk index.js --- put node program into debugging node
+
+
+-------------------------------------- Grunt
+
+Javascript task runner
+
+install it globally
+  npm install -g grunt-cli
+  sudo npm install grunt --save-dev
+
+  npm install grunt-contrrib-uglify --save-dev
+
+  Gruntfile.js
+
+-------------------------------------- Unit Test
+
+  Test Runner - web browser, carmel
+  Unit Test Framework
+    QUnit
+    Jazmin
+    Mocha
+    InternIO
+  Assertion Library
+    Shai
+  Spies
+    mocking
+    insert certain methods called
+
+  code coverage
+    istambul
+
+    JSlInt/Hint
+
+-----------------------------
+
+************** Killing port
+  lsof -i:8080
+  kill -9 pid

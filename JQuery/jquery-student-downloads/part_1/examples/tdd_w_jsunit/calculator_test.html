@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/jsUnitStyle.css">
+    <script type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
+    <script type="text/javascript" src="calculator.js"></script>
+    <script type="text/javascript">	
+        function testConstructor() {
+			calculator = new Calculator(123);
+			assertTrue(calculator.result == 123);
+        }
+
+		function testAddition() { 
+			calculator = new Calculator(2);
+			calculator.add(2);
+			assertTrue(calculator.result == 4); 
+		}
+		
+		function testSubtraction() { 
+			calculator = new Calculator(32);
+			calculator.subtract(16);
+			assertTrue(calculator.result == 16); 
+		}
+		
+		function testMultiplication() { 
+			calculator = new Calculator(100);
+			calculator.divide(4);
+			assertTrue(calculator.result == 25); 
+		}
+		
+		function testDivision() { 
+			calculator = new Calculator(15);
+			calculator.divide(3);
+			assertTrue(calculator.result == 5); 
+		}
+		
+		function testReset() { 
+			calculator = new Calculator(123);
+			calculator.reset();
+			assertTrue(calculator.result == 0); 
+		}
+    </script>
+</head>
+<body>
+	<h1>TDD - Tests for the Calculator Class</h1>
+	<p>Tests for a JavaScript Calculator</p>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>
+			Contact Information
+		</title>
+		<style>
+		label {
+			display: block;
+		}
+		label.valid {
+			width: 24px;
+			background: url(valid.png) center center no-repeat;
+			display: inline-block;
+			text-indent: -9999px;
+		}
+		label.error {
+			padding-left: 5px;
+			display: inline-block;
+		}
+		input {
+			display: inline-block;
+		}
+		form div {
+			padding: 5px;
+			float: left;
+			clear: left;
+			width: 100%;
+		}
+		button {
+			margin-top: 10px;
+		}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js" type="text/javascript"></script>
+		<script>
+		// validation plugin - add your custom rules here!!!!
+		$(document).ready(function(){
+		  $('#contact_form').validate({
+		    rules: {
+		      first_name: {
+		        required: true,
+		      },
+		      last_name: {
+		        required: true,
+		      },
+		      contact_me: {
+			    required: true
+		      }
+		    },
+		    success: function(label) {
+		      label.text('OK!').addClass('valid');
+		    }
+		  });
+	
+		});
+		</script>
+	</head>
+	<body>
+		<h2>
+			Contact Information
+		</h2>
+		<form action="" id="contact_form">
+			<div>
+				<label for="first_name">First Name</label> 
+				<input name="first_name" id="first_name" type="text">
+			</div>
+			<div>
+				<label for="last_name">Last Name</label> 
+				<input name="last_name" id="last_name" type="text">
+			</div>
+			<div>
+				<label for="email">EMail</label> 
+				<input name="email" id="email" type="text">
+			</div>
+			<div>
+				<label for="website">Website</label> 
+				<input name="website" id="website" type="text">
+			</div>
+			<div>
+				<input id="contact_me_no" name="contact_me" type="radio" value="no" />
+				<label for="contact_me_no">No</label>
+				<input id="contact_me_yes" name="contact_me" type="radio" value="yes"  />
+				<label for="contact_me_yes">Yes</label>
+			</div>
+			<div id="contact_me_message" style="display: none">
+				<p id="contact_me_yes_message">We will pester you forever!</p>
+				<p id="contact_me_no_message">You'll never hear from us!</p>
+			</div>
+			<div>
+			    <input type="submit" value="Submit" />	
+			</div>
+		</form>
+	</body>
+</html>

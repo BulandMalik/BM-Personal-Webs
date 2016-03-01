@@ -1,0 +1,35 @@
+<html>
+	<head> 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+		<script src="../utilities/print_function.js"></script>
+		<script src="integrallis.structures.js"></script>
+	</head>
+	<body>
+        <h1>Stack</h1>
+		<script>
+		print("<b>Creating the stack</b>");
+		var myStack = new INTEGRALLIS.structures.Stack();
+		
+		print("<br/><b>Pushing 1..5</b>");
+		var i = 0;
+		for (i = 0; i <= 5; i++) {
+            myStack.push(i);
+		}
+
+		print(myStack.toString());
+		
+		print("<br/><b>Popping one off the stack</b>")
+		print(myStack.pop());
+		print(myStack.toString());
+		
+		// print("<br/><b>Accessing .elements</b>")
+		// for (var i = 0; i < myStack.elements.length; i++) {
+		//             print("element " + i + " ==> " + myStack.elements[i]);
+		// }
+
+		print("<br/><b>Clearing the stack</b>")
+		myStack.clear();
+		print(myStack.toString());
+		</script>
+	</body>
+</html>

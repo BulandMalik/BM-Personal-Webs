@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<style type="text/css">
+		div#level_1 { width: 300px; border: 5px solid gray; }
+		div#level_2 { width: 250px; border: 5px solid red; }
+		div#level_3 { width: 200px;	border: 5px solid yellow; }
+		div#level_4 { width: 150px;	border: 5px solid green; }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+		<script>
+		function logIt(text) {
+			$('#output').append('<p>' + text + '</p>');
+		}
+		
+		$(document).ready(function(){
+			$('*').each(function() {
+			  var current = this;
+			  this.addEventListener('click', function(event) {
+				  logIt('Capturing ' + current.tagName + ' with id ' + current.id + ' for target ' + event.target.id);
+			  }, true);
+			  this.addEventListener('click', function(event) {
+			      logIt('Bubbling ' + current.tagName + ' with id ' + current.id + ' for target ' + event.target.id);
+			  }, false);  
+			});
+		});
+		</script>
+	</head>
+	<body>
+        <h1>Event Handling in the DOM</h1>
+       
+        <div id="level_1">
+	        Level 1
+	        <div id="level_2">
+		        Level 2
+		        <div id="level_3">
+			        Level 3
+			        <div id="level_4">
+						Level 4
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+
+
+        <div id="output"></div>
+	</body>
+</html>
+
+

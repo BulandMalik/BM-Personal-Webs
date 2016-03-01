@@ -1,0 +1,77 @@
+
+
+<html>
+<header>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</header>
+
+<body>	
+	<form action="/ServicesDemo/testJSP" id="addtoCartForm">
+				<table id="commerceDisplayTable">
+					<tbody>
+					
+						
+							<tr>
+								
+								
+									
+									
+								
+									
+									
+										<td style="padding-left: 17px;" valign="top">					
+											<input value="0000000000003300014" id="offeringId" checked="checked"  type="radio">
+										</td>
+										<td style="padding-left: 10px; width:60px;" valign="top">
+											<label for="0000000000003300014">Unlimited Employees</label>
+										</td>
+										<td class="commerceDisplaySpacer"></td>
+										<td style="padding-top:8px;" valign="top">
+											<div class="commercePrice">Less than						
+												$22/month<div class="clear"></div>
+											</div>
+											<div class="annualPrice">
+											(	<span class="categoryCallStrike" style="padding:0px;">
+													<span class="showPercentFloat">$329.00</span>
+												</span><span class="pricingSale" style="padding: 0px;">399.0</span> billed first year)<sup>1</sup>
+											</div>
+										</td>
+									
+								
+							</tr>
+						
+					
+				</tbody>
+		</table>
+				
+				<div class="commerceBuyNowButton33">
+					<!--<input style="border:none;" onclick="submitSelected_1();" src="/ServicesDemo/resources/scripts/button_b_lg_addtocart.gif" alt="Add to Cart" id="addToCartImg" name="addToCartImg" type="image">
+					--><input style="border:none;" onclick="submitSelected_1();" src="/ServicesDemo/resources/scripts/button_b_lg_addtocart.gif" alt="Add to Cart" id="addToCartImg" name="addToCartImg" type="image">
+
+				</div>
+			
+			<div style="visibility: visible; display: block;" class="mboxDefault">
+</div>
+
+</form>
+
+<script type="text/javascript">
+
+
+	
+	function submitSelected_1(){
+		alert('The radio button selected is  '+$("#offeringId:checked").val());
+		$("#addtoCartForm").attr("action", "/ServicesDemo/testJSP?offeringId=" + $("#offeringId:checked").val());
+		alert("second alert !");
+		alert("third alert");
+		//alert('test - '+$("#addtoCartForm").attr("action").val());
+		
+		//$("#addtoCartForm").submit(); 
+		
+		/* $.get("/testJSP?offeringId="+$("#offeringId:checked").val()); */
+	}
+	
+</script>
+
+</body>
+</html>	

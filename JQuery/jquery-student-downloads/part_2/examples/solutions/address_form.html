@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>
+			JQuery Form Validation
+		</title>
+		<style>
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: #6666666;
+			padding: 40px;
+			font-size:87.5%
+			line-height:1.5;
+	    }
+		h1 {
+			margin-top: 0;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			margin-bottom: 20px;
+			clear: both;
+		}
+		label {
+			font-size: 10px;
+			font-weight: bold;
+			text-transform: uppercase;
+			display: block;
+			margin-bottom: 3px;
+			clear: both;
+		}
+		.error_field {
+			border : 4px solid red;
+		}
+		.frame {
+			border : 4px solid #1C4257;
+		}
+		</style>
+		<link rel="stylesheet" href="http://uniformjs.com/stylesheets/uniform.default.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="http://uniformjs.com/stylesheets/uniform.aristo.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="http://dtrejo.github.com/aristo/css/aristo.css" type="text/css" media="screen" charset="utf-8" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript">
+        </script>
+		<script src="http://cachedcommons.org/cache/jquery-uniform/1.7.3/javascripts/jquery-uniform.js" type="text/javascript">
+        </script>
+		<script>
+		// basic form validation
+		$(document).ready(function() {
+			
+			// validate function, takes a textField and a CSS class to apply
+			validate = function(textField, cssClass) {
+				textField.removeClass(cssClass);
+		    	if (textField.val().length == 0) {
+			        textField.addClass(cssClass);
+			    }
+			    return textField;
+			}
+		
+		    // apply uniform form styling
+			$("select, input:checkbox, input:radio, input:file").uniform();
+			
+			// on blur re-validate
+			$(':text').blur(function() { 
+				validate($(this), 'error_field'); 
+			});
+			
+			// validate on submit
+			$(':submit').click(function(e) {
+				$(':text').each(function() {
+					validate($(this), 'error_field');
+				});
+				e.preventDefault();
+			});
+			
+			// show/hide button
+			$('#show_hide').click(function(){
+				$("#form_frame").slideToggle('slow', function() {
+				    if ($('#show_hide').text() == "Hide") {
+						$('#show_hide').text("Show");
+					}
+					else {
+						$('#show_hide').text("Hide");
+					}
+				});
+			});
+		});
+		</script>
+	</head>
+	<body class="aristo">
+		<h2>
+			Address Information
+		</h2>
+		<div id="form_frame">
+		<form action="">
+			<div>
+				<label for="street">Street</label> 
+				<input name="street" id="street" type="text">
+			</div>
+			<div>
+				<label for="city">City</label> 
+				<input name="city" id="city" type="text">
+			</div>
+			<div class='select-radio'>
+				<label for="state">State</label>
+				<select id="state" name="state">
+					<option value="" selected>Please select...</option>
+					<option value="AL">Alabama</option>
+					<option value="AZ">Arizona</option>
+					<option value="CA">California</option>
+				</select>
+			</div>
+			<div>
+				<label for="zip">Zipcode</label> 
+				<input name="zipcode" id="zipcode" type="text">
+			</div>
+			<div>
+			    <button class="blue" type="submit">Submit</button>
+			</div>
+		</form>
+		</div>
+		<p>
+	    <button class="red" type="button" id="show_hide"/>Hide</button>
+	</body>
+</html>

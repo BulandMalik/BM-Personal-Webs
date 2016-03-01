@@ -1,0 +1,99 @@
+AngularJS
+---------
+
+Instructor
+  Charlie
+
+Books
+  Pro AngularJS
+
+  https://github.com/CADBOT
+  https://github.com/johnpapa/angular-styleguide
+  https://github.com/DanWahlin/MasteringJavaScriptCourseCode
+
+Tutorials
+  https://docs.angularjs.org/tutorial
+  Codeschool
+  Plauralsight
+
+---------
+
+Why we need single page app?
+  mobile is more hot, lesser data flows better it is
+  open source project/api's
+    GITHub UI
+
+  AngularJS vs React
+    AngularJS
+      HTML is simply a document publishing source. Lets use HTML as its built to server apps using Directives
+        Directives
+          Custom Angular Elements
+          Custom Angular Attributes --- like 'ng-app or ng-init'
+      Two way Data Binding
+    React
+      favors java script vs Angular favors HTML
+      React one way data bind
+      light weight and angular come with its batteries (like http etc.)
+      Testing React app is bit more work as compare to AngularJS
+
+    ******iffy - Immediately-invoked function expression
+      https://en.wikipedia.org/wiki/Immediately-invoked_function_expression
+      (function() {
+        // the code here is executed once in its own scope
+        angular.module('myapp',[]);
+      })();
+
+    Two scopes in JS
+      Function Scopes
+      Global Scopes
+---------
+
+  npm install -g live-server
+    live-server
+  npm install -g bower
+  bower install angular (creates bower-components)
+
+  go inside bower_components/angular
+  mkdir src
+  touch index.js
+
+  ************ https://github.com/johnpapa/angular-styleguide
+
+  browserfy*******
+----------
+
+  {{}} ----- way to define Angular expressions
+  ng-init
+  ng-app
+  ng-bind --- similar to ng-module
+    one way data flow
+    ng-model is a two way data flow
+  ng-bind-template ----- any expression
+  ng-model
+  ng-click
+  ng-repeat - looping construct
+    creates another scope
+    $index
+    $even/$odd
+    $first
+    $last
+  ng-if - true/false
+  ng-minlength/ng-maxlength/required
+
+  built in form validations****
+
+  Scopes
+    controller creates
+    top level
+    ng-repeat
+    forms creates its own scope
+
+  HTML5 has its own built in validations so we try to not run it as it have clashes with angular
+
+  Forms
+    if we set name='someName' than we can do
+      FormName.someName.$invalid/$dirty/$error/$error.maxlength/$error.minlength/$required
+    button on-click='product.submit' ng-disabled='productForm.$invalid' -- if form have any issues
+
+
+  ***** orders to scripts tags matters at times in html

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.js"></script>
+  </head>
+  <body ng-app="myapp1">
+    <section ng-controller='MyAppController'> <!-- everything inside the controller will be demped here-->
+        {{'hello ' + name}} <!-- can access name var -->
+    </section>
+    <section ng-controller='MyAppController'>
+        {{'hello ' + names}}
+        <br/>
+        {{'hello ' + fnames[0] + " " + lnames[0]}}
+    </section>
+  </body>
+</html>

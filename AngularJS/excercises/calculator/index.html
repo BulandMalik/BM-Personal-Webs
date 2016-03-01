@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./app/app.js"></script>
+    <!-- orders to scripts matters at times -->
+  </head>
+  <body ng-app="simpleMath">
+    <section ng-controller='MathController as mathController'>
+        <input ng-model='mathController.num1'> <!-- two way binding -->
+        <input ng-model='mathController.num2'> <!-- two way binding -->
+        <input ng-model='mathController.num3'> <!-- two way binding -->
+        <button ng-click='mathController.add()'>Add me!</button>
+        <button ng-click='mathController.mul()'>Multiply me!</button>
+        {{'{total:' + mathController.total + '}'}} <!-- one way binding -->
+    </section>
+  </body>
+</html>

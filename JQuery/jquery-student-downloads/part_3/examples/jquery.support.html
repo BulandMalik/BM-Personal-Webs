@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+		<script>
+		$(document).ready(function(){
+		    var ul = $("#capabilities");
+		    $.each($.support, function(key, val) {
+		    	ul.append('<li><strong>' + key + "</strong> : " + val + "</li>");
+		    });
+		});
+		</script>
+	</head>
+	<body>
+        <h1>jQuery Support</h1>
+        <ul id="capabilities"></ul>
+	</body>
+</html>

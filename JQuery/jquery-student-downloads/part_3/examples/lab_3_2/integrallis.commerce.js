@@ -1,0 +1,2 @@
+var INTEGRALLIS = {};
+INTEGRALLIS.commerce = {};
