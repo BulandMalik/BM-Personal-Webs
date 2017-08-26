@@ -1,0 +1,25 @@
+
+<div class="jumbotron text-center">
+    <h3>Invalidated the Cache Keys</h3>
+
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>Cache Key</td>
+                <td>Owner</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="cacheItem in response">
+                <td>{{ cacheItem.cacheKey }}</td>
+                <td>{{ cacheItem.owner }}</td>
+                <td>{{ cacheItem.status }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div ui-view></div>
